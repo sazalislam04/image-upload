@@ -39,7 +39,7 @@ body {
   font-size: 24px;
 }
 
-#form {
+#upload-container {
   box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
   width: 30%;
   margin: 0 auto;
@@ -50,22 +50,14 @@ body {
   padding: 16px;
   border-radius: 10px;
 }
-#form label {
+#upload-container label {
   margin-bottom: 8px;
   text-transform: capitalize;
   font-size: 14px;
   margin-top: 10px;
 }
-#form button {
-  width: 150px;
+#upload-container button {
   margin: 0 auto;
-  padding: 10px 0;
-  background-color: var(--primary);
-  border: none;
-  outline: none;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .image-container {
@@ -87,7 +79,7 @@ body {
   .heading h2 {
     font-size: 20px;
   }
-  #form {
+  #upload-container {
     width: 100%;
   }
   .image-container {
@@ -95,7 +87,7 @@ body {
   }
 }
 @media only screen and (min-width: 641px) and (max-width: 992px) {
-  #form {
+  #upload-container {
     width: 70%;
   }
   .image-container {
