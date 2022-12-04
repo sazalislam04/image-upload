@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/croppie/{version}/croppie.min.css"
+      href="./node_modules/cropperjs/dist/cropper.min.css"
     />
     <!-- bootstrap -->
     <link
@@ -29,18 +29,24 @@
   </head>
   <body>
     <!-- header area -->
-    <header id="header">
+    <header class="p-2" id="header">
       <div class="heading container">
         <a href="#"><i class="fa-solid fa-angle-left"></i></a>
         <h2>Add Image / Icon</h2>
       </div>
     </header>
     <!-- section body -->
-    <section>
+    <section id="upload-section">
       <div class="container">
         <div id="upload-container">
           <label for="">Upload image</label>
-          <input type="file" accept="image/*" id="default-btn" hidden />
+          <input
+            class=""
+            type="file"
+            accept="image/*"
+            id="default-btn"
+            hidden
+          />
           <button class="btn btn-success" onclick="handleUploadImage()">
             Choose from Device
           </button>
@@ -51,15 +57,88 @@
       </div>
     </section>
 
+    <section id="crop-section">
+      <div class="crop-container">
+        <img id="crop-img" src="" alt="" />
+        <button
+          data-bs-toggle="modal"
+          href="#exampleModalToggle"
+          role="button"
+          class="crop-btn"
+          id="crop-btn"
+        >
+          Crop
+        </button>
+      </div>
+    </section>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="exampleModalToggle"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div>
+            <img class="w-100 p-5" id="modal-img" src="" alt="" />
+          </div>
+          <div class="modal-body d-flex gap-6 shape">
+            <button class="border p-2">Original</button>
+            <img
+              class="border p-2"
+              src="./assets/user_image_frame_1.svg"
+              alt=""
+            />
+            <img
+              class="border p-2"
+              src="./assets/user_image_frame_2.svg"
+              alt=""
+            />
+            <img
+              onclick="circleShape()"
+              class="border p-2"
+              src="./assets/user_image_frame_3.svg"
+              alt=""
+            />
+            <img
+              class="border p-2"
+              src="./assets/user_image_frame_4.svg"
+              alt=""
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-bs-target="#exampleModalToggle2"
+              data-bs-toggle="modal"
+            >
+              Use this image
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- custom js file -->
-    <script src="./js/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/{version}/croppie.min.js
-    "></script>
+
     <!-- bootstrap js -->
+    <script src="./node_modules//cropperjs//dist//cropper.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
