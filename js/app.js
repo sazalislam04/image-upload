@@ -24,11 +24,11 @@ defaultBtn.addEventListener("change", () => {
       const result = reader.result;
       cropImg.src = result;
       const croper = new Cropper(cropImg, {
-        aspectRatio: 16 / 9,
+        aspectRatio: 0,
         viewMode: 0,
       });
       cropBtn.addEventListener("click", () => {
-        let croppedImage = croper.getCroppedCanvas().toDataURL("image/png");
+        let croppedImage = croper.getCroppedCanvas().toDataURL();
         if (croppedImage) {
           modalImg.src = croppedImage;
           cropSection.style.display = "none";
@@ -43,5 +43,28 @@ function circleShape() {
   modalImg.classList.toggle("circle");
   image.src = modalImg.src;
   image.classList.toggle("circle");
+  imageContainer.style.display = "block";
+}
+
+function heartShape() {
+  modalImg.classList.toggle("heart");
+  image.src = modalImg.src;
+  image.classList.toggle("heart");
+  imageContainer.style.display = "block";
+}
+function polygonShape() {
+  modalImg.classList.toggle("polygon");
+  image.src = modalImg.src;
+  image.classList.toggle("polygon");
+  imageContainer.style.display = "block";
+}
+function landscapeShape() {
+  modalImg.classList.toggle("landscape");
+  image.src = modalImg.src;
+  image.classList.toggle("landscape");
+  imageContainer.style.display = "block";
+}
+function original() {
+  image.src = modalImg.src;
   imageContainer.style.display = "block";
 }

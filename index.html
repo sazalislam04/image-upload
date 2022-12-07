@@ -58,17 +58,17 @@
     </section>
 
     <section id="crop-section">
-      <div class="crop-container">
-        <img id="crop-img" src="" alt="" />
-        <button
+      <div class="crop-container h-100">
+        <span
           data-bs-toggle="modal"
           href="#exampleModalToggle"
           role="button"
           class="crop-btn"
           id="crop-btn"
         >
-          Crop
-        </button>
+          <i class="fa-solid fa-crop-simple"></i>
+        </span>
+        <img id="crop-img" src="" alt="" />
       </div>
     </section>
 
@@ -94,13 +94,15 @@
             <img class="w-100 p-5" id="modal-img" src="" alt="" />
           </div>
           <div class="modal-body d-flex gap-6 shape">
-            <button class="border p-2">Original</button>
+            <button onclick="original()" class="border p-2">Original</button>
             <img
+              onclick="heartShape()"
               class="border p-2"
               src="./assets/user_image_frame_1.svg"
               alt=""
             />
             <img
+              onclick="polygonShape()"
               class="border p-2"
               src="./assets/user_image_frame_2.svg"
               alt=""
@@ -112,6 +114,7 @@
               alt=""
             />
             <img
+              onclick="landscapeShape()"
               class="border p-2"
               src="./assets/user_image_frame_4.svg"
               alt=""
